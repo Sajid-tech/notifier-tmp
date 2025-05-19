@@ -1,12 +1,13 @@
 import { Toast, ToastType, ToastOptions, NotifierOptions } from '../types/index';
 import { generateId } from '../utils/helpers';
 
-let options: NotifierOptions = {
+const DEFAULT_OPTIONS: NotifierOptions = {
   position: 'top-right',
   duration: 3000,
   maxNotifications: 3
 };
 
+let options: NotifierOptions = { ...DEFAULT_OPTIONS };
 let notifications: Toast[] = [];
 let listeners: (() => void)[] = [];
 
@@ -30,9 +31,9 @@ export const createNotifierService = () => {
       return notifierService;
     },
 
-    show: (message: string, type: ToastType = 'info', options?: ToastOptions) => {
+    show: (message: string, type: ToastType = 'info', toastOptions?: ToastOptions) => {
       const id = generateId();
-      const duration = options?.duration ?? options.duration;
+      const duration = toastOptions?.duration ?? options.duration;
 
       const newToast: Toast = {
         id,
@@ -40,7 +41,7 @@ export const createNotifierService = () => {
         type,
         createdAt: Date.now(),
         duration: duration || 3000,
-        ...options
+        ...toastOptions
       };
 
       notifications = [newToast, ...notifications].slice(0, options.maxNotifications);

@@ -27,7 +27,9 @@ export interface Toast {
   onAutoClose?: () => void;
 }
 
-export interface ToastOptions extends Partial<Omit<Toast, 'id' | 'message' | 'createdAt'>> {}
+export interface ToastOptions extends Partial<Omit<Toast, 'id' | 'message' | 'createdAt'>> {
+  maxNotifications?: number;
+}
 
 export interface NotifierOptions {
   position?: ToastPosition;

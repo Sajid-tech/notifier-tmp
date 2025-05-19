@@ -1,28 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Notification, Position } from '../types';
-import { createNotifierService } from '../services/NotifierService';
+import { Toast, ToastPosition } from '../types/index';
 
-const notifier = createNotifierService();
+interface NotifierContainerProps {
+  notifications: Toast[];
+  position: ToastPosition;
+  onDismiss: (id: string) => void;
+}
 
-export const NotifierContainer: React.FC = () => {
-  const [notificationsState, setNotificationsState] = useState<Notification[]>([]);
-  const [position, setPosition] = useState<Position>(notifier.getOptions().position || 'top-right');
+export const NotifierContainer: React.FC<NotifierContainerProps> = ({
+  notifications,
+  position,
+  onDismiss
+}) => {
+  const [notificationsState, setNotificationsState] = useState<Toast[]>([]);
 
   useEffect(() => {
-    const updateNotifications = () => {
-      setNotificationsState(notifier.getNotifications());
-      setPosition(notifier.getOptions().position || 'top-right');
-    };
-
-    const cleanup = notifier.addListener(updateNotifications);
-    updateNotifications();
-
-    return cleanup;
-  }, []);
+    setNotificationsState(notifications);
+  }, [notifications]);
 
   const handleDismiss = (id: string) => {
-    notifier.dismiss(id);
+    const notification = document.getElementById(`notifier-${id}`);
+    if (notification) {
+      notification.classList.add('exit');
+      setTimeout(() => {
+        onDismiss(id);
+      }, 200);
+    }
   };
 
   return createPortal(
