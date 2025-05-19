@@ -1,5 +1,5 @@
 {
-  "name": "@sajid-tech/notifier",
+  "name": "react-notifier-toast",
   "version": "0.1.0",
   "description": "Beautiful, customizable toast notifications for React",
   "author": "Sajid Hussain",

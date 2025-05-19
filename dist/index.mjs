@@ -879,7 +879,7 @@ const Ir = Y("X", [
             "button",
             {
               onClick: n.action.onClick,
-              className: `rounded bg-white dark:bg-gray-800 px-2 py-1 text-xs font-medium text-gray-900 dark:text-gray-100 
+              className: `rounded bg-white dark:bg-gray-800 px-2 py-1 text-xs font-medium text-gray-900 dark:text-gray-100 \r
                   hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500`,
               children: n.action.label
             }

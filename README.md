@@ -1,4 +1,4 @@
-# @sajid-tech/notifier
+# react-notifier-toast
 
 A beautiful, customizable toast notification library for React applications.
 
@@ -16,18 +16,18 @@ A beautiful, customizable toast notification library for React applications.
 ## Installation
 
 ```bash
-npm install @sajid-tech/notifier
+npm install react-notifier-toast
 # or
-yarn add @sajid-tech/notifier
+yarn add react-notifier-toast
 # or
-pnpm add @sajid-tech/notifier
+pnpm add react-notifier-toast
 ```
 
 ## Quick Start
 
 ```tsx
-import { notifier } from '@sajid-tech/notifier';
-import '@sajid-tech/notifier/styles.css';
+import { notifier } from 'react-notifier-toast';
+import 'react-notifier-toast/styles.css';
 
 function App() {
   const showToast = () => {
