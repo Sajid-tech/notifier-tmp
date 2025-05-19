@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
-import { Toast } from '../types';
+import { Toast } from '../types/index';
 import ToastIcon from './ToastIcon';
 
 interface ToastItemProps {
@@ -41,7 +41,6 @@ export const ToastItem: React.FC<ToastItemProps> = ({
   };
 
   useEffect(() => {
-    // Trigger entrance animation
     const enterTimer = setTimeout(() => {
       setIsVisible(true);
     }, 50);

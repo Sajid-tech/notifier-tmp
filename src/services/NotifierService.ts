@@ -1,4 +1,4 @@
-import { Toast, ToastType, ToastOptions, NotifierOptions } from '../types';
+import { Toast, ToastType, ToastOptions, NotifierOptions } from '../types/index';
 import { generateId } from '../utils/helpers';
 
 let options: NotifierOptions = {

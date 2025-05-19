@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toast, ToastPosition } from '../types';
+import { Toast, ToastPosition } from '../types/index';
 import ToastItem from './ToastItem';
 import { getPositionClasses, isBottomPosition } from '../utils/helpers';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AlertTriangle, CheckCircle, Info, XCircle } from 'lucide-react';
-import { ToastType } from '../types';
+import { ToastType } from '../types/index';
 
 interface ToastIconProps {
   type: ToastType;

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useCallback, useMemo, useEffect } from 'react';
-import { NotifierContextValue, Toast, ToastOptions, ToastPosition } from '../types';
+import { NotifierContextValue, Toast, ToastOptions, ToastPosition } from '../types/index';
 import { generateId } from '../utils/helpers';
 
 export const NotifierContext = createContext<NotifierContextValue | undefined>(undefined);
@@ -38,7 +38,6 @@ export const NotifierProvider: React.FC<NotifierProviderProps> = ({
     []
   );
 
-  // Auto dismiss toasts
   useEffect(() => {
     const timers = toasts.map((toast) => {
       if (toast.duration !== Infinity) {
