@@ -2,7 +2,6 @@ import  { useState } from 'react';
 import notifier from './Notifier';
 import {  Package, Coffee, GitBranch } from 'lucide-react';
 
-
 type ToastType = 'success' | 'error' | 'warning' | 'info';
 
 function App() {
@@ -89,7 +88,7 @@ function App() {
               <GitBranch size={20} />
               <span>GitHub</span>
             </a>
-            <a href="https://www.npmjs.com/package/sajid-notifier" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.npmjs.com/package/react-notifier-toast-temp" target="_blank" rel="noopener noreferrer" 
                className="text-white hover:text-red-400 transition-colors flex items-center gap-2">
               <Package size={20} />
               <span>NPM Package</span>
